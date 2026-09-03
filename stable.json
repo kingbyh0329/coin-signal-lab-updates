@@ -5,27 +5,23 @@
     "schemaVersion": 1,
     "appId": "coin-signal-lab-next",
     "channel": "stable",
-    "releaseId": "0.1.0-next.18",
+    "releaseId": "0.1.0-next.19",
     "sourceVersion": "0.1.0-next.17",
-    "targetVersion": "0.1.0-next.18",
-    "publishedAt": "2026-09-03T11:15:04.461704Z",
-    "archiveUrl": "https://github.com/kingbyh0329/coin-signal-lab-updates/releases/download/0.1.0-next.18/coin-signal-lab-next-update.zip",
-    "archiveSize": 1341,
-    "archiveSha256": "3931b020d1ee05a5a41713d290db6ad543557d6d7b7bde1d26e08eac1dea9a21",
+    "targetVersion": "0.1.0-next.19",
+    "publishedAt": "2026-09-03T11:18:37.410439Z",
+    "archiveUrl": "https://github.com/kingbyh0329/coin-signal-lab-updates/releases/download/0.1.0-next.19/coin-signal-lab-next-update.zip",
+    "archiveSize": 1094,
+    "archiveSha256": "5d54d4c70cde4849ae2775bec30efb4e9f41ae377973c3854fe3f4929019261d",
     "files": [
       {
         "path": "engine/coin_signal_lab/__init__.py",
-        "sha256": "2ea9ddeeae89bfa370fa400dd68723469b7810e966f9edfffa02330d1c5afee2"
-      },
-      {
-        "path": "engine/coin_signal_lab/__main__.py",
-        "sha256": "7cad2141951a08e8c888eaf339a3d08764e208d36c29ec3b9d60a1369cf144e9"
+        "sha256": "abbd2f36cc7ebb08476b4e0e5253ccb01626b0f5baf58c0c2d288a8b992b6324"
       },
       {
         "path": "package.json",
-        "sha256": "96b0ff0275bccabd0f597ef252dcc283cd67d1090b3dee9b9ee504774b2f41d9"
+        "sha256": "d1231d828feac567ec8dceadc1f395ff0ef5b323beee6b4df4bb56945a6f5de9"
       }
     ]
   },
-  "signature": "APtEbcSBF/j4ZwmWemiK01ghCrZnqgZMAQZksEZToR0Fklt6CdmYOwrROJZIwOrKma0yi7yRTtDtCKJcVxw+Ag=="
+  "signature": "6IV2ateJI1AJ5kQ5mY8c9DvP+AF80xsIW/DOUqsreGYLWNRbmJ5oJsMJx5hLsz1XfYt28w4wRNFk9aXWMkNTCg=="
 }
