@@ -1,0 +1,139 @@
+name: Publish signed Coin Signal Lab update
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_version:
+        description: Installed version this update upgrades
+        required: true
+        type: string
+      target_version:
+        description: Target application version
+        required: true
+        type: string
+      release_id:
+        description: Release ID / GitHub tag
+        required: true
+        type: string
+      archive_url:
+        description: HTTPS URL of the unsigned application-only update ZIP
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+environment: production
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out update host
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${{ inputs.target_version }}" = "${{ inputs.release_id }}"
+          case "${{ inputs.archive_url }}" in https://*) ;; *) exit 2 ;; esac
+
+      - name: Download unsigned update archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --proto '=https' --tlsv1.2 \
+            --output coin-signal-lab-next-update.zip \
+            '${{ inputs.archive_url }}'
+          test -s coin-signal-lab-next-update.zip
+
+      - name: Prepare signing helper
+        shell: bash
+        run: |
+          cat > sign_release.py <<'PY'
+          import base64, hashlib, json, os, pathlib, stat, zipfile
+          from datetime import datetime, timezone
+          from cryptography.hazmat.primitives import serialization
+          from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+
+          archive = pathlib.Path('coin-signal-lab-next-update.zip')
+          source = os.environ['SOURCE_VERSION']
+          target = os.environ['TARGET_VERSION']
+          release_id = os.environ['RELEASE_ID']
+          repo = os.environ['GITHUB_REPOSITORY']
+          key_id = os.environ.get('KEY_ID', 'release-2026')
+          private_pem = os.environ['CSL_RELEASE_PRIVATE_KEY'].encode()
+          key = serialization.load_pem_private_key(private_pem, password=None)
+          if not isinstance(key, Ed25519PrivateKey):
+              raise SystemExit('CSL_RELEASE_PRIVATE_KEY is not Ed25519')
+
+          protected = {'data','snapshots','results','checkpoints','research-data','user-data'}
+          files=[]; seen=set()
+          with zipfile.ZipFile(archive) as z:
+              for info in z.infolist():
+                  if info.is_dir() or (info.flag_bits & 1):
+                      raise SystemExit('invalid zip entry')
+                  p=info.filename.replace('\\','/')
+                  parts=p.split('/')
+                  if not p or p.startswith('/') or any(x in ('','.','..') for x in parts):
+                      raise SystemExit(f'unsafe path: {p}')
+                  if parts[0].lower() in protected:
+                      raise SystemExit(f'protected path: {p}')
+                  ident=p.lower()
+                  if ident in seen: raise SystemExit(f'duplicate path: {p}')
+                  seen.add(ident)
+                  mode=(info.external_attr >> 16) & 0o170000
+                  if mode == stat.S_IFLNK: raise SystemExit(f'symlink: {p}')
+                  files.append({'path':p,'sha256':hashlib.sha256(z.read(info)).hexdigest()})
+          files.sort(key=lambda x:x['path'].lower())
+          archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+          asset='coin-signal-lab-next-update.zip'
+          archive_url=f'https://github.com/{repo}/releases/download/{release_id}/{asset}'
+          payload={
+            'schemaVersion':1,'appId':'coin-signal-lab-next','channel':'stable',
+            'releaseId':release_id,'sourceVersion':source,'targetVersion':target,
+            'publishedAt':datetime.now(timezone.utc).isoformat().replace('+00:00','Z'),
+            'archiveUrl':archive_url,'archiveSize':archive.stat().st_size,
+            'archiveSha256':archive_sha,'files':files,
+          }
+          canonical=json.dumps(payload,ensure_ascii=False,sort_keys=True,separators=(',',':'),allow_nan=False).encode()
+          signature=base64.b64encode(key.sign(canonical)).decode()
+          envelope={'schemaVersion':1,'keyId':key_id,'payload':payload,'signature':signature}
+          pathlib.Path('stable.json').write_text(json.dumps(envelope,ensure_ascii=False,indent=2),encoding='utf-8')
+          PY
+
+      - name: Install signing dependency
+        run: python -m pip install --disable-pip-version-check 'cryptography>=46,<47'
+
+      - name: Sign release manifest
+        env:
+          CSL_RELEASE_PRIVATE_KEY: ${{ secrets.CSL_RELEASE_PRIVATE_KEY }}
+          SOURCE_VERSION: ${{ inputs.source_version }}
+          TARGET_VERSION: ${{ inputs.target_version }}
+          RELEASE_ID: ${{ inputs.release_id }}
+          KEY_ID: release-2026
+        run: python sign_release.py
+
+      - name: Create GitHub release and upload signed archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release create '${{ inputs.release_id }}' \
+            coin-signal-lab-next-update.zip \
+            --title 'Coin Signal Lab ${{ inputs.target_version }}' \
+            --notes 'Signed production update for Coin Signal Lab Next.'
+
+      - name: Publish stable.json only after release upload succeeds
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'coin-signal-lab-release-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add stable.json
+          git commit -m 'Publish stable ${{ inputs.target_version }}'
+          git push origin main
