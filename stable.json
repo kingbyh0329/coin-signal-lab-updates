@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "keyId": "release-2026",
+  "payload": {
+    "schemaVersion": 1,
+    "appId": "coin-signal-lab-next",
+    "channel": "stable",
+    "releaseId": "0.1.0-next.16",
+    "sourceVersion": "0.1.0-next.15",
+    "targetVersion": "0.1.0-next.16",
+    "publishedAt": "2026-09-03T10:28:46.809098Z",
+    "archiveUrl": "https://github.com/kingbyh0329/coin-signal-lab-updates/releases/download/0.1.0-next.16/coin-signal-lab-next-update.zip",
+    "archiveSize": 1094,
+    "archiveSha256": "049062d58e8d62f6d11c4fa2d13a7893608e22699b20c92e84844b4ef762df15",
+    "files": [
+      {
+        "path": "engine/coin_signal_lab/__init__.py",
+        "sha256": "aa1ab52fbf1c8fe2fc23cd635272ea0ad8adf72d4d636421e920381419506a31"
+      },
+      {
+        "path": "package.json",
+        "sha256": "e5157ebc354d5d9b6e4e728919aacd26c58789725e468e4d55ecd36071f8f4c7"
+      }
+    ]
+  },
+  "signature": "e4SSonF5jXtuPUo12fXRkSfH/NHMYTw05aW6kpzp/UDhlIOe3yCKmImA1kcZbp5FO6tuJW18dPa5B/h69kyuAw=="
+}
