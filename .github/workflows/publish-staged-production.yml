@@ -38,16 +38,27 @@ jobs:
                   raise SystemExit(f'invalid {label}')
           if target != release_id or target == source:
               raise SystemExit('targetVersion/releaseId/sourceVersion relationship is invalid')
-          if archive_file != 'staging/chunks':
-              raise SystemExit('automatic release archive path is not allowed')
-          chunk_root=pathlib.Path(archive_file)
-          chunks=sorted(chunk_root.glob('part-*.b64')) if chunk_root.is_dir() else []
-          if not chunks:
-              raise SystemExit('staged update archive chunks are missing')
+          if archive_file != 'staging/files':
+              raise SystemExit('automatic release file root is not allowed')
+          file_root=pathlib.Path(archive_file)
+          required=[file_root/'package.json', file_root/'engine/coin_signal_lab/__init__.py']
+          if not all(path.is_file() for path in required):
+              raise SystemExit('staged update version files are missing')
           with pathlib.Path(os.environ['GITHUB_ENV']).open('a',encoding='utf-8') as handle:
               handle.write(f'SOURCE_VERSION={source}\nTARGET_VERSION={target}\nRELEASE_ID={release_id}\n')
           PY
-          cat staging/chunks/part-*.b64 | base64 --decode > coin-signal-lab-next-update.zip
+          python - <<'PY'
+          import pathlib, zipfile
+          root=pathlib.Path('staging/files')
+          output=pathlib.Path('coin-signal-lab-next-update.zip')
+          with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+              for path in sorted(p for p in root.rglob('*') if p.is_file()):
+                  rel=path.relative_to(root).as_posix()
+                  info=zipfile.ZipInfo(rel,date_time=(2020,1,1,0,0,0))
+                  info.compress_type=zipfile.ZIP_DEFLATED
+                  info.external_attr=0o100644 << 16
+                  z.writestr(info,path.read_bytes())
+          PY
           test -s coin-signal-lab-next-update.zip
 
       - name: Install signing dependency
