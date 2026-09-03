@@ -6,7 +6,6 @@ on:
       - 'release/**'
     paths:
       - 'release-request.json'
-      - 'staging/coin-signal-lab-next-update.zip'
 
 permissions:
   contents: write
@@ -39,14 +38,17 @@ jobs:
                   raise SystemExit(f'invalid {label}')
           if target != release_id or target == source:
               raise SystemExit('targetVersion/releaseId/sourceVersion relationship is invalid')
-          if archive_file != 'staging/coin-signal-lab-next-update.zip':
+          if archive_file != 'staging/chunks':
               raise SystemExit('automatic release archive path is not allowed')
-          if not pathlib.Path(archive_file).is_file():
-              raise SystemExit('staged update archive is missing')
+          chunk_root=pathlib.Path(archive_file)
+          chunks=sorted(chunk_root.glob('part-*.b64')) if chunk_root.is_dir() else []
+          if not chunks:
+              raise SystemExit('staged update archive chunks are missing')
           with pathlib.Path(os.environ['GITHUB_ENV']).open('a',encoding='utf-8') as handle:
               handle.write(f'SOURCE_VERSION={source}\nTARGET_VERSION={target}\nRELEASE_ID={release_id}\n')
           PY
-          cp staging/coin-signal-lab-next-update.zip coin-signal-lab-next-update.zip
+          cat staging/chunks/part-*.b64 | base64 --decode > coin-signal-lab-next-update.zip
+          test -s coin-signal-lab-next-update.zip
 
       - name: Install signing dependency
         run: python -m pip install --disable-pip-version-check 'cryptography>=46,<47'
