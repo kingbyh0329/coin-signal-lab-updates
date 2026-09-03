@@ -5,31 +5,27 @@
     "schemaVersion": 1,
     "appId": "coin-signal-lab-next",
     "channel": "stable",
-    "releaseId": "0.1.0-next.17",
-    "sourceVersion": "0.1.0-next.15",
-    "targetVersion": "0.1.0-next.17",
-    "publishedAt": "2026-09-03T11:06:16.968170Z",
-    "archiveUrl": "https://github.com/kingbyh0329/coin-signal-lab-updates/releases/download/0.1.0-next.17/coin-signal-lab-next-update.zip",
-    "archiveSize": 9414,
-    "archiveSha256": "53fea63d659926e2869fd08aa816f9b7ffab48550a9e4621e9cde2cf5e60eb19",
+    "releaseId": "0.1.0-next.18",
+    "sourceVersion": "0.1.0-next.17",
+    "targetVersion": "0.1.0-next.18",
+    "publishedAt": "2026-09-03T11:15:04.461704Z",
+    "archiveUrl": "https://github.com/kingbyh0329/coin-signal-lab-updates/releases/download/0.1.0-next.18/coin-signal-lab-next-update.zip",
+    "archiveSize": 1341,
+    "archiveSha256": "3931b020d1ee05a5a41713d290db6ad543557d6d7b7bde1d26e08eac1dea9a21",
     "files": [
       {
         "path": "engine/coin_signal_lab/__init__.py",
-        "sha256": "0d0de7ba04fab1a26fd5b294d0ab7cb592194876915eb4b35e1543902d1b217a"
+        "sha256": "2ea9ddeeae89bfa370fa400dd68723469b7810e966f9edfffa02330d1c5afee2"
       },
       {
-        "path": "engine/coin_signal_lab/updates/manager.py",
-        "sha256": "9952d278656ebcad3c4e27d911735e0db9443f88d053c9dc5fb29dcc019bd6e1"
-      },
-      {
-        "path": "engine/coin_signal_lab/updates/transaction.py",
-        "sha256": "4fc69f16aa8279618ffd12ac9fcb10dba9df0e5b8a805001705d3de0e0e0f3f5"
+        "path": "engine/coin_signal_lab/__main__.py",
+        "sha256": "7cad2141951a08e8c888eaf339a3d08764e208d36c29ec3b9d60a1369cf144e9"
       },
       {
         "path": "package.json",
-        "sha256": "9e5128f10d79e25d96e94f8909c90d7981105fd3bcf6b605b0ac497db5588adb"
+        "sha256": "96b0ff0275bccabd0f597ef252dcc283cd67d1090b3dee9b9ee504774b2f41d9"
       }
     ]
   },
-  "signature": "QhnMkSz3JvzGiMi2xhDTBDztkDA5uWgiAJoIaX1JtwRdryrDmJbIzn+AS9f1vtE51340DcGtE9Yj8iu3ui+KCg=="
+  "signature": "APtEbcSBF/j4ZwmWemiK01ghCrZnqgZMAQZksEZToR0Fklt6CdmYOwrROJZIwOrKma0yi7yRTtDtCKJcVxw+Ag=="
 }
