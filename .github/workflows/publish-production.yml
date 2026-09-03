@@ -23,11 +23,10 @@ on:
 permissions:
   contents: write
 
-environment: production
-
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - name: Check out update host
         uses: actions/checkout@v4
