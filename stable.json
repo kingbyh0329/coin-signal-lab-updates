@@ -5,13 +5,13 @@
     "schemaVersion": 1,
     "appId": "coin-signal-lab-next",
     "channel": "stable",
-    "releaseId": "0.1.0-next.23",
-    "sourceVersion": "0.1.0-next.22",
-    "targetVersion": "0.1.0-next.23",
-    "publishedAt": "2026-09-04T02:21:00.332093Z",
-    "archiveUrl": "https://github.com/kingbyh0329/coin-signal-lab-updates/releases/download/0.1.0-next.23/coin-signal-lab-next-update.zip",
-    "archiveSize": 632625,
-    "archiveSha256": "f446ed7b73a2b7db1d3724d0ad32549b5f1f0ac396cf9bde2cccd50b59ccad92",
+    "releaseId": "0.1.0-next.24",
+    "sourceVersion": "0.1.0-next.23",
+    "targetVersion": "0.1.0-next.24",
+    "publishedAt": "2026-09-04T04:00:19.096519Z",
+    "archiveUrl": "https://github.com/kingbyh0329/coin-signal-lab-updates/releases/download/0.1.0-next.24/coin-signal-lab-next-update.zip",
+    "archiveSize": 660640,
+    "archiveSha256": "8c7788bc1489951f159980d0549ea833c67f9d1f7762e34b59bed6e4e1b37e51",
     "files": [
       {
         "path": "config/update-channel-provision.json",
@@ -27,39 +27,39 @@
       },
       {
         "path": "dist/client/.vite/manifest.json",
-        "sha256": "50d57220a835f0fc8fa5bfe4514c21a58d7c20f782d5dfb9c186162d759e20a7"
+        "sha256": "7ad235007efc55a0228f207a72ee05207c8d17c661c3f7bffa41c22a19119499"
       },
       {
         "path": "dist/client/_headers",
         "sha256": "2148fb62669525f5091532d36d4a48a8da95b08a5a797bacde75d2fe981351bb"
       },
       {
-        "path": "dist/client/_next/static/cb4fc335-e253-4e44-81b0-56cee8461c82/_buildManifest.js",
+        "path": "dist/client/_next/static/2d35fbc0-8fc9-4f18-8a81-c9eaa6bc60cd/_buildManifest.js",
         "sha256": "47f02b34be6dc481257b6efce4c19e19111f37ef5c437f8ffed44f0da97fa9bb"
       },
       {
-        "path": "dist/client/_next/static/cb4fc335-e253-4e44-81b0-56cee8461c82/_ssgManifest.js",
+        "path": "dist/client/_next/static/2d35fbc0-8fc9-4f18-8a81-c9eaa6bc60cd/_ssgManifest.js",
         "sha256": "653f3e53e89b4f8548ff86c19e92bb3c6b84b6be7485a320b1e00893ed877479"
       },
       {
-        "path": "dist/client/_next/static/chunks/app-route-prefetch-policy-CGOLdPxg.js",
-        "sha256": "e0d43c444f48a05b46b23dad59f39c54fee674524aa73b195aa673c5e5f06b9e"
+        "path": "dist/client/_next/static/chunks/app-route-prefetch-policy-CuheZQ6f.js",
+        "sha256": "84d77656b4882395bd84f9447ff1e9e38b03c67dcf8d3716b6662c39a5e25e4d"
       },
       {
-        "path": "dist/client/_next/static/chunks/app-shell-DPtaW9hk.js",
-        "sha256": "153dcd1103b7e8c685db586458dce1a06f1627942094709db1183460cbed934a"
+        "path": "dist/client/_next/static/chunks/app-shell-DqXNKRXk.js",
+        "sha256": "94953ab81337fdb0739b9ef9698995f5357e66e9dadf40e05fb3405a155dd178"
       },
       {
         "path": "dist/client/_next/static/chunks/framework-D_rUT4EX.js",
         "sha256": "939d0fabebb3b2f01753bb866b067d8d3384fb06da19f0e6557609d3b1a9f4f7"
       },
       {
-        "path": "dist/client/_next/static/chunks/index-DPycrEqE.js",
-        "sha256": "681e36daa607fac8b7616a103ce51d89b9650f30304a1ecde2b6390da60c677a"
+        "path": "dist/client/_next/static/chunks/index-C6te0PWo.js",
+        "sha256": "671f33f1bedcc07999cec18d4be8f85e543ec81084e9f2760b805a7927ebc235"
       },
       {
-        "path": "dist/client/_next/static/chunks/layout-segment-context-DQl-1JfO.js",
-        "sha256": "ab0709b1addbe4c2d5ef872ede58de456e08e68d0546aa535b777f5484f1df2f"
+        "path": "dist/client/_next/static/chunks/layout-segment-context-BE-BXE-E.js",
+        "sha256": "8aafa90d01204b94a9f6c959baabfaa27342e6e46f2746be716b46e16ebe938f"
       },
       {
         "path": "dist/client/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
@@ -70,8 +70,8 @@
         "sha256": "7eb2a6b44b9c0faa7300c8dd36b0fae7a35d9f65e139dd9046b3df193aa83bc8"
       },
       {
-        "path": "dist/client/_next/static/css/index.CBkd9YtM.css",
-        "sha256": "e5cedbfd17b23271811760b199ed79749e72a21cfadbf62f31b7702ce07b569c"
+        "path": "dist/client/_next/static/css/index.-t7bERWG.css",
+        "sha256": "0583beb86e6f61427ea383ab486acd097d238a89b8ecee496b929d835535bf89"
       },
       {
         "path": "dist/client/favicon.svg",
@@ -79,31 +79,31 @@
       },
       {
         "path": "dist/client/vinext-client-entry-manifest.json",
-        "sha256": "c41db1cbd9196129c2180b75451f8f1ab043376e4f7cea333a0ccfdb3de87cee"
+        "sha256": "797404c4b83e8645d0183e3519157de96e914f7a508c80218acb784085480c92"
       },
       {
         "path": "dist/server/.vite/manifest.json",
-        "sha256": "0535d3ec89bf54792e2caccaaa31ddd1a52b3ba3b6846ce4f064b45a54f1431c"
+        "sha256": "46048be74c52f1f762598b27b43a59ae45cb2da57f770b54ebb0c2b8fd2de2b3"
       },
       {
         "path": "dist/server/__vite_rsc_assets_manifest.js",
-        "sha256": "1b1d9a75c391ca74a8708b072cf8b91f1e80848a208dd4eb0956f6e1ab054454"
+        "sha256": "38e9c177f633027887a7e8e377502cab33c6bf36834d2b06de8af26d40a5a8ba"
       },
       {
-        "path": "dist/server/_next/static/app-page-cache-DvfVeesE.js",
-        "sha256": "b848ada54e5b83130dd80cb2bb67656378bb523de05f193c2f708996d943666e"
+        "path": "dist/server/_next/static/app-page-cache-BEVsPfQe.js",
+        "sha256": "340325635525629eadaf3989a66852ffb9d4e55824428775cd46320bcb90ba8c"
       },
       {
-        "path": "dist/server/_next/static/app-page-cache-finalizer-D1yRe3P4.js",
-        "sha256": "143dc02dfaaf308723435011f0177eaa39fb480abdfe8e42def235703806213d"
+        "path": "dist/server/_next/static/app-page-cache-finalizer-DnTzUVf-.js",
+        "sha256": "e08f93d7b04692c70fa8f37ccc17a0628a705d3c6d1f9e3fccfa4cd8eb14e86b"
       },
       {
-        "path": "dist/server/_next/static/app-page-cache-render-KnDwm3UF.js",
-        "sha256": "a6456d546184c5b3010d988fec589933c91d8fe9be09a07ff3ead716cec72957"
+        "path": "dist/server/_next/static/app-page-cache-render-BRl4HB6v.js",
+        "sha256": "45fad6720ccd79dcb901463af25c9688f9f3c968d6dc9ee3ed8d947e7bd8289f"
       },
       {
-        "path": "dist/server/_next/static/app-page-stream-C7UplDXQ.js",
-        "sha256": "3b53fae1e8159b4119938b8abb78ecce29ef790292847cda542e105c55ace0aa"
+        "path": "dist/server/_next/static/app-page-stream-Dbxl-sKO.js",
+        "sha256": "4bdf70dcacb0db8e7422d4fda2b67a60f5a9ba99afa598ee198d0ea917b6ce67"
       },
       {
         "path": "dist/server/_next/static/app-prerender-endpoints-1cqZZgLN.js",
@@ -114,24 +114,24 @@
         "sha256": "c281eb6996d11c128a775c6b5b401a9ca602cbe3d57fcb2a1c55cba51816158e"
       },
       {
-        "path": "dist/server/_next/static/app-route-handler-dispatch-BsoY44kU.js",
-        "sha256": "1be325413ddefbb5d2732577b68715e711252d7be3241a76bbf49e75259c19b1"
+        "path": "dist/server/_next/static/app-route-handler-dispatch-DA7dM7W8.js",
+        "sha256": "b81f000fde4a7b104a6542c4c0e046c815c1600efbf6d23445bec8390c23d598"
       },
       {
-        "path": "dist/server/_next/static/app-segment-config-VbSupMMC.js",
-        "sha256": "caceb7860fbdef154314c7cac1f1959b913a6c1924fde32720c87aa6c9ebc65c"
+        "path": "dist/server/_next/static/app-segment-config-pkz5mEsH.js",
+        "sha256": "55c24a4823ae5d8c7f95b40bd3a8f533a8d0ec1f4b02004ef603e432bdda1c6c"
       },
       {
         "path": "dist/server/_next/static/app-static-generation-DbmTuUMJ.js",
         "sha256": "71451721ae4a42108e9ed32567cd9d9861beb4952215b0fd57ffc373cd3edc01"
       },
       {
-        "path": "dist/server/_next/static/cache-headers-BWRx-yiR.js",
-        "sha256": "da9724f9a8c2055395d1cd52ede6ae30361198c89f7e839eb90e63233b991d3b"
+        "path": "dist/server/_next/static/cache-headers-C0ca31bR.js",
+        "sha256": "6ecc0675a5c4b5337b763592db943db19595e5c74b3d89849e422d369ee8594a"
       },
       {
-        "path": "dist/server/_next/static/css/index.CBkd9YtM.css",
-        "sha256": "e5cedbfd17b23271811760b199ed79749e72a21cfadbf62f31b7702ce07b569c"
+        "path": "dist/server/_next/static/css/index.-t7bERWG.css",
+        "sha256": "0583beb86e6f61427ea383ab486acd097d238a89b8ecee496b929d835535bf89"
       },
       {
         "path": "dist/server/_next/static/framework~index-C0-sSg6i.js",
@@ -146,16 +146,16 @@
         "sha256": "648e4fa7ae87991a6cd983562b20963627fb399e9ba85bdd2bec5d74f5c46861"
       },
       {
-        "path": "dist/server/_next/static/implicit-tags-5iZBus6c.js",
-        "sha256": "264b87aa1bdcc4864f06133b2409940b10e3b087aa33cbfa64fd77ff642c0f23"
+        "path": "dist/server/_next/static/implicit-tags-DRqP1O3J.js",
+        "sha256": "0c7a8190fee6f2ee897ce370bf3768a58fdd6d470ed2ec07ff3dcdf50de97f7a"
       },
       {
-        "path": "dist/server/_next/static/isr-cache-DI2BuThK.js",
-        "sha256": "c97cd1108a4305af9acdcedb07c3803114ad0c9c2290a63f595429a58ddd539e"
+        "path": "dist/server/_next/static/isr-cache-CQXymGeu.js",
+        "sha256": "47a1c9dacf20455c1e6efaf113c77351199d6ed04c97ab044078bd28513ba4ea"
       },
       {
-        "path": "dist/server/_next/static/navigation-runtime-Bl10LuLI.js",
-        "sha256": "351f8eb906f348c351c3ce077bcfda00acc18028698a72acb86a84cba885d849"
+        "path": "dist/server/_next/static/navigation-runtime-bV-1Hnrf.js",
+        "sha256": "1ab19cc460223e6e5b241b28dcf2deb70e2c4c68b77e910ef6d9d75e8e404b2a"
       },
       {
         "path": "dist/server/_next/static/page-CCppThlU.js",
@@ -186,32 +186,32 @@
         "sha256": "ab8a43d1d8d1e73a971a7c041e19fae50ec31e261094ddf3a4f716f9f916b7e6"
       },
       {
-        "path": "dist/server/_next/static/text-stream-BkdnaDxn.js",
-        "sha256": "9e74c50ac1cf3edf79a0783173f2b94410d4103c74d10e5c92e8a55c33c9d296"
+        "path": "dist/server/_next/static/text-stream-BvJjWvce.js",
+        "sha256": "268d176515f3aef81a7af1a8e447f6372c5ea95df3f168bbe1799212512656c7"
       },
       {
         "path": "dist/server/BUILD_ID",
-        "sha256": "6fe836bdd642a33c5a0cfecc3311c82bcf0b6622d5a7986689dfaf6565c8761c"
+        "sha256": "da47b8a0cbaca3a664288743c48a6087d015cbfc4f4603828ca46839aac42147"
       },
       {
         "path": "dist/server/index.js",
-        "sha256": "28ae4afde5b0b6dec9bc8dd2f39a52128c802bde2610f42b0be6387d75b6dad0"
+        "sha256": "91b56b9664a4900971fac50487e18d1aa6fcf94ef6b3546fbe08421806808069"
       },
       {
         "path": "dist/server/prerendered-routes/404.html",
-        "sha256": "0010a58dcb18e7bfd09aac78e5d72bb66217cc2b74ff35897c18b6d6169dbfe4"
+        "sha256": "9d121923d480bc8ae5b4cdd0693f1afe59a7fa9efffab3881510120604fcb4b0"
       },
       {
         "path": "dist/server/prerendered-routes/index.html",
-        "sha256": "5dc144e568bec82daa55f59639e8ecb853f949b2b075fc5ebc322d55c2cf2d96"
+        "sha256": "df0dc68fd7cce78b9aa6e2f4425b486c218a7757a282cff95e71e52d5b2a873c"
       },
       {
         "path": "dist/server/prerendered-routes/index.rsc",
-        "sha256": "4729cffcdf1a770f5e64766644dd470fc13c786c4159480b9b19edbfd1fa87bd"
+        "sha256": "21323dd9ab7b07287e562edb049620ddeadae6148b24596b5baf351b81c064d1"
       },
       {
         "path": "dist/server/ssr/__vite_rsc_assets_manifest.js",
-        "sha256": "1b1d9a75c391ca74a8708b072cf8b91f1e80848a208dd4eb0956f6e1ab054454"
+        "sha256": "38e9c177f633027887a7e8e377502cab33c6bf36834d2b06de8af26d40a5a8ba"
       },
       {
         "path": "dist/server/ssr/_next/static/app-prefetch-fetch-queue-DxuBK-0j.js",
@@ -222,8 +222,8 @@
         "sha256": "8aa68c48f347896ce1bc31ef186746a7cd9ae043f3e4e39a3856f13d1061bb3c"
       },
       {
-        "path": "dist/server/ssr/_next/static/app-shell-B740ILKX.js",
-        "sha256": "e52a37731fe1b5f37f8d589245340f09b905e4cd9f2367ba24508c0c1442af82"
+        "path": "dist/server/ssr/_next/static/app-shell-CxdgvE47.js",
+        "sha256": "664fc163e0fb179076a40a259c9e1e0560fe761f6578410af0d04c661104e5d0"
       },
       {
         "path": "dist/server/ssr/_next/static/error-boundary-CpKCYeaG.js",
@@ -243,19 +243,19 @@
       },
       {
         "path": "dist/server/ssr/index.js",
-        "sha256": "8c694acf1b784d89574eafbe358c14ee43c5a748c4e0354b1539e917e93b1875"
+        "sha256": "498398aa2e969324115e376d304c7a78766140db91e7e05e6bae1b78dbb4c589"
       },
       {
         "path": "dist/server/ssr/vinext-client-assets.js",
-        "sha256": "45afb43561502249dd06ed830653a4a4dd3788694bbbf533373ae10b7e42cbb1"
+        "sha256": "5aa91c17d8a02e469bacda15c2af9113be97b92db14125d1666d35140ec1ea54"
       },
       {
         "path": "dist/server/ssr/vinext-server.json",
-        "sha256": "b9d1201f19eedc29b13acb19faf724ca8626662fc8edfe1e2b73eee420f99cc2"
+        "sha256": "f21fec5d0f619e06bb57049008862044cc59eda7c30bbea11f11bf779921a35c"
       },
       {
         "path": "dist/server/vinext-client-assets.js",
-        "sha256": "45afb43561502249dd06ed830653a4a4dd3788694bbbf533373ae10b7e42cbb1"
+        "sha256": "5aa91c17d8a02e469bacda15c2af9113be97b92db14125d1666d35140ec1ea54"
       },
       {
         "path": "dist/server/vinext-externals.json",
@@ -263,15 +263,15 @@
       },
       {
         "path": "dist/server/vinext-prerender-paths.json",
-        "sha256": "ed4522ce554ac559f3aca011a642bf2cf059acd3f59d2364bb4755348d617340"
+        "sha256": "7085d1ccff6a79c4abfc71c4814ad2b4dbb88e19d7c4c97a282c7d67799154c1"
       },
       {
         "path": "dist/server/vinext-prerender.json",
-        "sha256": "e0011f79aa9b795c164e644bb8e2eb69464256fe47ab24c75b5936dca6686937"
+        "sha256": "5a4ea7b125ec5c9ed117bf456eb7c764f46e3d7253f33233e11232819d97e321"
       },
       {
         "path": "dist/server/vinext-server.json",
-        "sha256": "b9d1201f19eedc29b13acb19faf724ca8626662fc8edfe1e2b73eee420f99cc2"
+        "sha256": "f21fec5d0f619e06bb57049008862044cc59eda7c30bbea11f11bf779921a35c"
       },
       {
         "path": "dist/server/wrangler.json",
@@ -279,7 +279,7 @@
       },
       {
         "path": "engine/coin_signal_lab/__init__.py",
-        "sha256": "96d2e3b723a1ba45b993f65f8a67f3c7f82c533666aacc5d5eb2b5c0e79b5e3b"
+        "sha256": "1f9bb6ebd09d8d707c7b31f7d3a6464274f1adfb36e9f3a225f21cd5680a311e"
       },
       {
         "path": "engine/coin_signal_lab/__main__.py",
@@ -295,7 +295,7 @@
       },
       {
         "path": "engine/coin_signal_lab/control/__init__.py",
-        "sha256": "4480cfa36990d43d66fccea2e4a06021547985691c9b6c14eabb5dae435462e7"
+        "sha256": "65e83cb0e0951cc2a803ac0b8b18525ff7248a287243a9300c7d383fd5ebf583"
       },
       {
         "path": "engine/coin_signal_lab/control/coordinator.py",
@@ -322,6 +322,10 @@
         "sha256": "3e55ac0029cc156eecb3fb0adc4c3eba409ad922a3e2ca41f51f2983b0d0525e"
       },
       {
+        "path": "engine/coin_signal_lab/control/executor_next24.py",
+        "sha256": "ed9668f25208225fa81e433ad9d6f09c44f3bc932320842b5c38200d2f54a68b"
+      },
+      {
         "path": "engine/coin_signal_lab/control/http_server.py",
         "sha256": "66cec0a903006aa12efaee8c6c3c556d4c53d2f5db1c8daee29b4b2585c67509"
       },
@@ -334,12 +338,20 @@
         "sha256": "95e8d06184e617e11c040d6903d74365f9a835a8c992c4f34fcf04ae4245159d"
       },
       {
+        "path": "engine/coin_signal_lab/control/http_server_next24.py",
+        "sha256": "e8c942a50db0f34d6ea4dda6d8d11f5d573b6d134fadac5b7be0ceb5a41f466e"
+      },
+      {
         "path": "engine/coin_signal_lab/control/instance.py",
         "sha256": "c251919506e0865126fdbd9d66bdd3ba43be7aec3f7f07d792790c68e13e5de0"
       },
       {
         "path": "engine/coin_signal_lab/control/server_next21.py",
         "sha256": "3693dbf61e49bae839e0f53d26b6deeff2c000f3bc42737ab1112603e462a01c"
+      },
+      {
+        "path": "engine/coin_signal_lab/control/server_next24.py",
+        "sha256": "863313f9009ae5ccf0a46b42d09ba051c8d42d52f9d1461dcb32dae4a0f92d7d"
       },
       {
         "path": "engine/coin_signal_lab/control/store.py",
@@ -370,6 +382,10 @@
         "sha256": "8f24b8df82d867bd53ab7195cacc7374c52dbb9eea177cbf76e4ac1fffcf5127"
       },
       {
+        "path": "engine/coin_signal_lab/methodology_next24.py",
+        "sha256": "62bbfc55a9710c18e69cf4a67189ad3a60345fb047281de56c57084018608f7b"
+      },
+      {
         "path": "engine/coin_signal_lab/performance.py",
         "sha256": "5b56090a2d7ee78109cb171a81435a355fed40be66398b4bd959ae505e73d1fc"
       },
@@ -386,12 +402,20 @@
         "sha256": "d488233c7795421a6d859d7f0cd75c24fd2881bb0b31bde1f71192a6c5457b2b"
       },
       {
+        "path": "engine/coin_signal_lab/research/candidate_store.py",
+        "sha256": "23688a9a0e2648c3a9eff1544c31f5a8952c96139c74214ee6b11841e8e596e2"
+      },
+      {
         "path": "engine/coin_signal_lab/research/development_evolution.py",
         "sha256": "cfe5132503d36ad1616fb4250f3963605a09a70b91ec551015a07de611b18a1b"
       },
       {
         "path": "engine/coin_signal_lab/research/development_evolution_next22.py",
         "sha256": "7037a87744215de407b9d3f83705be5b7076b94786c6194054d49e9d979f0838"
+      },
+      {
+        "path": "engine/coin_signal_lab/research/development_evolution_next24.py",
+        "sha256": "7d2364a78a29dcc409c73a1886d858cf31e8236eb5898ddede665dc115eb3871"
       },
       {
         "path": "engine/coin_signal_lab/research/diversity.py",
@@ -418,12 +442,20 @@
         "sha256": "0fa8c39bed849192420829bc3bed12345c8c72eb8707bf39d5b9e7f76103055a"
       },
       {
+        "path": "engine/coin_signal_lab/research/orchestration_next24.py",
+        "sha256": "032dfca1de77613dd90122e078204244fd747cc4662af4c7e20cbfed8f11c442"
+      },
+      {
         "path": "engine/coin_signal_lab/research/runner.py",
         "sha256": "672430e5d2d6230b8b5b8a47bf82947a9cfe5cddf5c7fa1d2485dfa068921dfa"
       },
       {
         "path": "engine/coin_signal_lab/research/runner_next21.py",
         "sha256": "07e79089c5a7bdb8033fc8f145d2556f62bbeedb09380de4985dad6cd8344b58"
+      },
+      {
+        "path": "engine/coin_signal_lab/research/runner_next24.py",
+        "sha256": "f1ce89b31815324c65e46939fb07a7029d384183caf080164b2aefed6adee34d"
       },
       {
         "path": "engine/coin_signal_lab/research/simulation.py",
@@ -499,9 +531,9 @@
       },
       {
         "path": "package.json",
-        "sha256": "06f2981eb5ea0f4dfe69a160ca962a13704b1046ec75ed09b980099e5c37d7f6"
+        "sha256": "7dc715d56607aa98bd065d0580d7993f10fc556e1dbabb7afa0ccd20207bbc31"
       }
     ]
   },
-  "signature": "PsmNKVw5B3sH0UuNYDzUhDjPe1iWLUTZ+wycW61UHPrWKRTXJZyLvWrt2EsQ/l2TocG2lIQyDaEszK6lQnTVAA=="
+  "signature": "42UQYp1mi/J+AqZnJ8eb2yrwq+emONL+qLit/wA7uRvQWjWl2OunSSNjxJwwrnk2XcBC0Edc89D7dVylEx5gBQ=="
 }
