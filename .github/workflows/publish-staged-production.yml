@@ -140,6 +140,23 @@ jobs:
             --title "Coin Signal Lab ${TARGET_VERSION}" \
             --notes 'Signed production update for Coin Signal Lab Next.'
 
+      - name: Verify published release bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "${RUNNER_TEMP}/published-release"
+          gh release download "${RELEASE_ID}" \
+            --pattern 'coin-signal-lab-next-update.zip' \
+            --dir "${RUNNER_TEMP}/published-release"
+          PUBLISHED="${RUNNER_TEMP}/published-release/coin-signal-lab-next-update.zip"
+          test -s "$PUBLISHED"
+          test "$(stat -c%s coin-signal-lab-next-update.zip)" = "$(stat -c%s "$PUBLISHED")"
+          test "$(sha256sum coin-signal-lab-next-update.zip | cut -d' ' -f1)" = "$(sha256sum "$PUBLISHED" | cut -d' ' -f1)"
+          cmp --silent coin-signal-lab-next-update.zip "$PUBLISHED"
+          echo 'BYTE_FOR_BYTE_MATCH=YES'
+
       - name: Publish stable manifest to main
         shell: bash
         run: |
