@@ -1,0 +1,53 @@
+name: Verify next.24 release byte identity
+
+on:
+  push:
+    branches:
+      - 'verify/next24-byte-compare'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact staging commit
+        uses: actions/checkout@v4
+        with:
+          ref: 6911a0a2a05ed283e30814a8050e6dd8ebbf5710
+          fetch-depth: 0
+
+      - name: Reconstruct production archive exactly
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import pathlib, zipfile
+          root=pathlib.Path('staging/files')
+          output=pathlib.Path('reconstructed.zip')
+          if not root.is_dir():
+              raise SystemExit('staging/files missing at exact staging commit')
+          with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+              for path in sorted(p for p in root.rglob('*') if p.is_file()):
+                  rel=path.relative_to(root).as_posix()
+                  info=zipfile.ZipInfo(rel,date_time=(2020,1,1,0,0,0))
+                  info.compress_type=zipfile.ZIP_DEFLATED
+                  info.external_attr=0o100644 << 16
+                  z.writestr(info,path.read_bytes())
+          PY
+          sha256sum reconstructed.zip
+          test "$(stat -c%s reconstructed.zip)" = "660640"
+          echo "8c7788bc1489951f159980d0549ea833c67f9d1f7762e34b59bed6e4e1b37e51  reconstructed.zip" | sha256sum -c -
+
+      - name: Download published release asset and compare bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 3 --retry-all-errors \
+            -o published.zip \
+            'https://github.com/kingbyh0329/coin-signal-lab-updates/releases/download/0.1.0-next.24/coin-signal-lab-next-update.zip'
+          test "$(stat -c%s published.zip)" = "660640"
+          echo "8c7788bc1489951f159980d0549ea833c67f9d1f7762e34b59bed6e4e1b37e51  published.zip" | sha256sum -c -
+          cmp --silent reconstructed.zip published.zip
+          echo 'BYTE_FOR_BYTE_MATCH=YES'
